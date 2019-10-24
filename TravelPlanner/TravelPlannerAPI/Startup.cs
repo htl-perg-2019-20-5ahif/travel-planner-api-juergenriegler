@@ -26,7 +26,8 @@ namespace TravelPlannerAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IBusScheduleParser, BusScheduleJsonParser>();
-            services.AddTransient<IBusScheduleReader, BusScheduleFileReader>();
+            services.AddTransient<IBusScheduleReader, BusScheduleWebReader>();
+            services.AddHttpClient();
             services.AddControllers();
         }
 
